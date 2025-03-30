@@ -1,0 +1,23 @@
+::placeholder {
+    text-transform: capitalize;
+    color: var(--grey-90);
+}
+
+   :where(input, textarea ){
+    background-color: transparent;
+    border: none;
+    outline: none;
+  }
+
+  textarea {
+    resize: none;
+    min-height: 2rem;
+    overflow-y: auto;
+    scrollbar-width: 0;
+  }
+
+
+
+  form li {
+    border-top: 1px solid var(--grey-90);
+  }

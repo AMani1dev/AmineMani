@@ -1,0 +1,82 @@
+    .circle-wrapper {
+      --_circle-clr: white;
+      display: grid;
+      place-items: center;
+      animation: circle-move 10s ease  forwards infinite;
+  
+      * {
+        grid-column: 1;
+        grid-row: 1;
+      }
+  
+      span {
+        --_title-mxw: 15ch;
+      }
+    }
+  
+    .circle {
+      width: var(--_circle-size);
+      aspect-ratio: 1;
+      border: 0.3px solid var(--_circle-clr);
+    }
+  
+    [class*="circle"] {
+      --_circle-size: var(--circle-size);
+    }
+  
+    .circles-container.circle {
+      /* --circle-size: 3rem; */
+      --circle-size: 2.7rem;
+  
+      > .circle {
+        left: 50%;
+      }
+    }
+  
+   
+  
+    
+    .circle-md {
+      --circle-size: 90%;
+      rotate: x 72deg;
+    }
+  
+    .top-circle-md {
+      translate: -50% -20%;
+    }
+  
+    .bottom-circle-md {
+      translate: -50% 30%;
+    }
+  
+    .circle-center {
+      --circle-size: 100%;
+      transform: rotateX(70deg) translateX(-50%);
+    }
+  
+    :where(.circle, .vertical) {
+      border-radius: 50%;
+    }
+  
+    :where(.circles-container > .circle, .vertical) {
+      position: absolute;
+    }
+  
+    .vertical {
+      inset: 0;
+      rotate: y var(--_rotate-y);
+      animation: rotate 10s linear infinite;
+      border-left: 0.3px solid var(--_circle-clr);
+    }
+  
+    @keyframes rotate {
+      to {
+        rotate: y calc(var(--_rotate-y) + 40deg);
+      }
+    }
+  
+    @keyframes circle-move {
+      to {
+        rotate: 180deg;
+      }
+    }

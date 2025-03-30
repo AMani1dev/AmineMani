@@ -1,0 +1,43 @@
+.text_wrapper {
+    margin-top: 15vh;
+}
+
+
+.hp {
+    counter-reset: hp-counter;
+    margin-top: 7rem;
+
+    @media(width > 768px ){
+
+        .col {
+            counter-increment: hp-counter;
+
+            &:before {
+                content: counter(hp-counter, decimal-leading-zero);
+                position: absolute;
+                translate: 1rem -130%;
+                font-size: var(--step--3);
+                top: 0;
+                left: 0;
+                color: var(--grey-70);
+            }
+        }
+
+        .col p {max-width: 30ch}
+    }
+}
+
+
+.dots__wrapper  {
+    .dot {
+        width: 4px;
+        aspect-ratio: 1;
+        animation: fade 2s ease var(--delay) infinite;
+    }
+}
+
+@keyframes fade {
+    to {
+        opacity: 0;
+    }
+}

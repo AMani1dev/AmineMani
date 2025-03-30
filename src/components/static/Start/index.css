@@ -1,0 +1,8 @@
+.start___wrapper {
+    z-index: 55;
+    background-color: #141517;
+    transition: all .8s ease;
+
+    display: grid;
+    place-items: center;
+}

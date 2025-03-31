@@ -104,6 +104,7 @@ function OffCanvaPageLinks() {
 
       <ul className="mt-3 text-capitalize list-unstyled menu-list ">
         <li className="magnetic position-relative">
+          {/* <NavLink className={"page-link"} to={"/"}> */}
           <NavLink className={"page-link"} to={"/"}>
             {" "}
             home

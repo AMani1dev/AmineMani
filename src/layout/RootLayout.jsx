@@ -18,16 +18,25 @@ export default function RootLayout() {
     const transitionWrapper = document.querySelector(".transition__wrapper");
 
     const handleClick = e => {
+
       e.preventDefault();
       transitionWrapper.classList.add("active");
-      if(aside.classList.contains("aside__show"))aside.classList.remove("aside__show")
+      
+      if(aside.classList.contains("aside__show")) aside.classList.remove("aside__show")
 
 
-      // setTimeout(() => navigate(e.target.getAttribute("href")) , 1000); 
-      setTimeout(() => {
-        navigate(e.target.getAttribute("href"))
-        window.scrollTo(0, 0)
-      } , 1000); 
+  setTimeout(() => {
+    let linkElement = e.target.closest("a"); 
+    if (!linkElement) return; 
+  
+    let fullHref = linkElement.getAttribute("href"); 
+    let correctedHref = fullHref === "/" ? "/AmineMani/" : fullHref.replace("/AmineMani", ""); 
+  
+  
+    navigate(correctedHref);
+    window.scrollTo(0, 0);
+  }, 1000);
+  
 
       setTimeout(() => transitionWrapper.classList.remove("active"), 2000); 
     };
